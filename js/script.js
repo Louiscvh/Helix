@@ -37,8 +37,33 @@ $(document).ready(function() {
   });
 
   /* Changement de parfum */
-  $(".switch-btn__Container__right").click(function() {
-    $( "body" ).css( "background-color", "#982033" );
-  });
 
+
+
+});
+
+var compteurCouleur = 0;
+
+function ColorChecker () {
+  if(compteurCouleur == 0 ) {
+    $('body').addClass('black').removeClass('red').removeClass('yellow');
+  }
+
+  if(compteurCouleur == 1 ) {
+    $('body').addClass('red').removeClass('black').removeClass('yellow');
+  }
+
+  if(compteurCouleur == 2 ) {
+    $('body').addClass('yellow').removeClass('black').removeClass('red');
+  }
+}
+
+$(".switch-btn__Container__right").click(function(){
+  compteurCouleur = compteurCouleur + 1;
+  ColorChecker();
+});
+
+$(".switch-btn__Container__left").click(function(){
+  compteurCouleur = compteurCouleur - 1;
+  ColorChecker();
 });
