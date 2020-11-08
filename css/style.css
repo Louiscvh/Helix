@@ -1,0 +1,496 @@
+html {
+  font-family: sofia-pro, sans-serif;
+  color: white;
+  cursor: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  background-color:rgba(0, 0, 0, 0.95);
+}
+
+h1 {
+  color: white;
+  font-family: 'Lora', serif;
+  font-weight: 400;
+  font-size: 50px;
+  z-index: 1;
+}
+
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+a {
+  cursor: none;
+  text-decoration: none;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+}
+
+li {
+  list-style: none;
+}
+
+.clear {
+  clear: right;
+}
+
+/* Sidebar */
+
+.sidebar {
+  position: fixed;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  z-index: 1000;
+  transform: translateX(0%);
+  transition: transform 1.2s ease;
+}
+
+.sidebar__mid {
+  position: fixed;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  background-color: gray;
+  z-index: 999;
+  transform: translateX(0%);
+  transition: transform 0.8s ease;
+}
+
+.sidebar__low {
+  position: fixed;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  background-color: lightgray;
+  z-index: 998;
+  transform: translateX(0%);
+  transition: transform 0.4s ease;
+}
+
+.sidebar__container {
+  width: 80%;
+  height: 100vh;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.sidebar__close {
+  position: absolute;
+  left: 80%;
+  top: 0;
+  margin: 50px;
+}
+
+.--close {
+  transform: translateX(-100%);
+}
+
+.--open {
+  transform: translateX(0%);
+}
+
+.sidebar__left, .sidebar__right {
+  margin-bottom: 100px;
+}
+
+.sidebar__left li {
+  font-size: 58px;
+  color: rgba(255, 0, 0, 0);
+  background-color: transparent;
+  -webkit-text-stroke: 1.4px white;
+  margin-top: 30px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.sidebar__left li:hover {
+  color: white;
+}
+
+.sidebar__left_link::before {
+  color: white;
+  font-size: 14px;
+  left: -15px;
+  position: absolute;
+}
+
+.sidebar__left_link_1::before {
+  content: '01';
+}
+
+.sidebar__left_link_2::before {
+  content: '02';
+}
+.sidebar__left_link_3::before {
+  content: '03';
+}
+
+.sidebar__left__form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+}
+
+.sidebar__left__form label {
+  opacity: 0.2;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.sidebar__left__form input {
+  width: 400px;
+  height: 50px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  font-family: sofia-pro, sans-serif;
+  padding-left: 30px;
+  font-size: 16px;
+  color: white;
+}
+
+.sidebar__right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar__right h2 {
+  transform: rotate(90deg);
+  font-size: 120px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.sidebar__right__social {
+  display: flex;
+  margin-top: 120px;
+}
+
+.sidebar__right__social__block {
+  height: 50px;
+  width: 50px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin: 12px 12px 0px 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar__right__social__block svg {
+  height: 25px;
+  width: 25px;
+  fill: white;
+}
+
+.home {
+  width: 80%;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  transform: translateY(-160px);
+  z-index: 9;
+}
+
+#particles-js {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+.container {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  z-index: 10;
+}
+
+.can-wrapper {
+  position: relative;
+}
+
+.can {
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.can img {
+  height: 400px;
+  z-index: 2;
+  position: relative;
+}
+
+.label-wrapper {
+  position: absolute;
+  top: 2%;
+  left: 0;
+  width: 100%;
+  height: 92.1%;
+  clip-path: url(#vertical-can-clip);
+}
+
+@keyframes translate {
+  0%, 100% {
+    transform: translateX(0px);
+  }
+
+  50% {
+    transform: translateX(-2000px);
+  }
+}
+
+.label-wrapper span {
+  background-image: url("img/blackCan.png");
+  background-size: cover;
+  background-size: contain;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-repeat: repeat-x;
+  width: 500vw;
+  height: 100%;
+  animation: translate 30s linear infinite;
+}
+
+header {
+  margin-top: 50px;
+  z-index: 10;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.headerLeft h2 {
+  font-size: 56px;
+  color: rgba(255, 0, 0, 0);
+  background-color: transparent;
+  -webkit-text-stroke: 2px white;
+  text-transform: uppercase;
+}
+
+.headerRight {
+  display: flex;
+  flex-direction: column;
+}
+
+.burgerContainer {
+  padding: 20px;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.burgerLine {
+  transition: all 0.3s;
+}
+
+.burgerLine2 {
+  position: absolute;
+  top: 5px;
+}
+
+.burgerContainer:hover .burgerLine1 {
+  transform: rotate(45deg);
+  background-color: white;
+}
+
+.burgerContainer:hover .burgerLine2 {
+  transform: rotate(-45deg);
+  top: 18px;
+  background-color: white;
+}
+
+.burgerContainer div {
+  width: 40px;
+  height: 3px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: gray;
+}
+
+.headerRight p {
+  color: white;
+  transform: rotate(90deg);
+  font-weight: 300;
+  opacity: 0.2;
+  margin-top: 40px;
+  transition: opacity 0.3s;
+}
+
+.headerRight p:hover {
+  opacity: 0.4;
+}
+
+.particles-js-canvas-el {
+  position: fixed;
+  height: 100%;
+  top: 0;
+  z-index: 9;
+}
+
+main {
+  position: relative;
+}
+
+.infosBlock {
+  width: 400px;
+}
+
+.infosBlockLeft {
+  clear: right;
+}
+
+.infosBlockRight {
+  float: right;
+  text-align: right;
+}
+
+.infosBlock h2 {
+  font-size: 32px;
+}
+
+.infosSepa {
+  height: 2px;
+  background-color: white;
+}
+
+.infosBlock p {
+  text-align: justify;
+  opacity: 0.5;
+}
+
+.compo {
+  margin-top: 500px;
+  position: relative;
+}
+
+.compo h2 {
+  font-size: 50px;
+  font-family: 'Lora', serif;
+  text-align: center;
+  font-weight: 400;
+  margin-block-start: 0.23em;
+  margin-block-end: 0.23em;
+}
+
+.compoTop {
+  position: relative;
+  z-index: 2;
+}
+
+.compoBot {
+  z-index: -1;
+  position: relative;
+}
+
+.switch {
+  margin-top: 500px;
+  padding-bottom: 0px;
+}
+
+.switch h2 {
+  text-align: center;
+  font-size: 40px;
+}
+
+.switch p {
+  text-align: center;
+  opacity: 0.6;
+}
+
+.switchBtnContainer {
+  position: absolute;
+  right: 0;
+  margin-bottom: 50px;
+}
+
+.switchBtnContainer svg {
+  padding: 15px;
+  height: 25px;
+  opacity: 0.3;
+  transition: opacity 0.3s;
+}
+
+.switchBtnContainer svg:hover {
+  opacity: 0.7;
+}
+
+.pointer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 50%;
+  pointer-events: none;
+  box-sizing: border-box;
+  z-index: 1000000;
+  transition: 0.3s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform, 0.2s cubic-bezier(0.75, -0.27, 0.3, 1.33) opacity;
+}
+
+.pointer2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: 1px solid #404855;
+  border-radius: 50%;
+  pointer-events: none;
+  box-sizing: border-box;
+  transition: 0.2s;
+  z-index: 1000000;
+  transition: 0.2s ease-out, 0.6s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform, 0.2s cubic-bezier(0.75, -0.27, 0.3, 1.33) opacity;
+  transform-origin: 37px 35px;
+  visibility: hidden;
+}
+
+.pointer.active {
+  opacity: 0.9;
+  transform: scale(0);
+}
+
+.pointer2.active {
+  background-color: rgba(50, 50, 50, 0.5);
+  transform: scale(2);
+  border: none;
+  visibility: visible;
+}
