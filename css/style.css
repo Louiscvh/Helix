@@ -9,6 +9,7 @@ body {
   padding: 0;
   position: relative;
   background-color:rgba(0, 0, 0, 0.95);
+  transition: background-color 0.5s ease;
 }
 
 h1 {
@@ -431,20 +432,20 @@ main {
   opacity: 0.6;
 }
 
-.switchBtnContainer {
+.switch-btn__Container {
   position: absolute;
   right: 0;
   margin-bottom: 50px;
 }
 
-.switchBtnContainer svg {
+.switch-btn__Container svg {
   padding: 15px;
   height: 25px;
   opacity: 0.3;
   transition: opacity 0.3s;
 }
 
-.switchBtnContainer svg:hover {
+.switch-btn__Container svg:hover {
   opacity: 0.7;
 }
 
