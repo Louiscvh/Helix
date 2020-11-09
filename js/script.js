@@ -60,6 +60,8 @@ function ColorChecker() {
   console.log(compteurCouleur);
 }
 
+
+/* Click ternaire */
 $(".switch-btn__Container__right").click(function() {
   compteurCouleur = compteurCouleur < maxCouleur ? ++compteurCouleur : 0;
   ColorChecker();
