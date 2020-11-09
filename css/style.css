@@ -248,10 +248,20 @@ li {
 
 /* Fixed Elements */
 
+#myAudio {
+  transition: all 2s ease;
+ }
+
 .fixedElements embed {
   visibility: hidden;
   position: absolute;
 }
+
+.playPause {
+  height: 50px;
+  width: 50px;
+}
+
 .sound {
   position: fixed;
   bottom: 0;
@@ -276,7 +286,6 @@ li {
   text-decoration-color: white;
   text-decoration-line: underline;
   animation: wave 1s linear infinite;
-
 }
 
 @keyframes wave {

@@ -22,23 +22,7 @@ $(document).ready(function() {
     },
   })
 
-  /* Gestion du curseur */
-  $("a,#wrapper, .burgerContainer, .headerRight p, .switch-btn__Container svg, .sidebar__right__social, .sound").on("mouseenter", function() {
-    $('.pointer1').addClass("active");
-    $('.pointer2').addClass("active");
-  });
-  $("a,#wrapper, .burgerContainer, .headerRight p, .switch-btn__Container svg, .sidebar__right__social, .sound").on("mouseleave", function() {
-    $('.pointer1').removeClass("active");
-    $('.pointer2').removeClass("active");
-  });
-
-  /* Apparition de la sidebar */
-  $(".burgerContainer").click(function() {
-    $(".sidebar, .sidebar__mid, .sidebar__low").toggleClass("--open");
-  });
-
-});console.log("Loading particles.js");
-
+  /* JSON configuration de Particles.js */
   particlesJS('particles-js',
   {
   "particles": {
@@ -152,8 +136,43 @@ $(document).ready(function() {
 }
   );
 
-/* Changement de parfum */
+/* Gestion du curseur */
+$("a,#wrapper, .burgerContainer, .headerRight p, .switch-btn__Container svg, .sidebar__right__social, .sound").on("mouseenter", function() {
+  $('.pointer1').addClass("active");
+  $('.pointer2').addClass("active");
+});
+$("a,#wrapper, .burgerContainer, .headerRight p, .switch-btn__Container svg, .sidebar__right__social, .sound").on("mouseleave", function() {
+  $('.pointer1').removeClass("active");
+  $('.pointer2').removeClass("active");
+});
 
+/* Apparition de la sidebar */
+$(".burgerContainer").click(function() {
+  $(".sidebar, .sidebar__mid, .sidebar__low").toggleClass("--open");
+});
+
+/* ON/OFF de la musique de fond */
+var audioBtn = document.getElementById("audioBtn");
+var myAudio = document.getElementById("myAudio");
+myAudio.volume = 0.5;
+var isPlaying = false;
+
+function togglePlay() {
+  isPlaying ? myAudio.pause() : myAudio.play();
+};
+
+myAudio.onplaying = function() {
+  isPlaying = true;
+};
+myAudio.onpause = function() {
+  isPlaying = false;
+};
+
+audioBtn.onclick = function(){
+  togglePlay();
+};
+
+/* Changement de parfum */
 var compteurCouleur = 0;
 var maxCouleur = 3;
 
@@ -171,17 +190,18 @@ function ColorChecker() {
     $('body').removeClass().addClass('vanilla');
     $('.label-wrapper span').css('background-image', 'url("img/vanillaCan.png")')
   }
-  console.log(compteurCouleur);
 }
 
 
-/* Click ternaire */
-$(".switch-btn__Container__right").click(function() {
-  compteurCouleur = compteurCouleur < maxCouleur ? ++compteurCouleur : 0;
-  ColorChecker();
-});
+  /* Click ternaire */
+  $(".switch-btn__Container__right").click(function() {
+    compteurCouleur = compteurCouleur < maxCouleur ? ++compteurCouleur : 0;
+    ColorChecker();
+  });
 
-$(".switch-btn__Container__left").click(function() {
-  compteurCouleur = compteurCouleur > 0 ? --compteurCouleur : maxCouleur;
-  ColorChecker();
+  $(".switch-btn__Container__left").click(function() {
+    compteurCouleur = compteurCouleur > 0 ? --compteurCouleur : maxCouleur;
+    ColorChecker();
+  });
+
 });
