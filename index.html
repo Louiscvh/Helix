@@ -3,11 +3,10 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="Helix Website">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="author" content="Louis Maxime">
-  <meta name="description" content="Helix est un projet étudiant dans le cadre d'une formation en développement web.">
+  <meta name="description" content="Helix est un projet étudiant dans le cadre d'une formation en développement web." />
+  <meta name="author" content="Maxime Louis" />
   <title>Helix</title>
 
   <!-- Favicon -->
@@ -47,18 +46,12 @@
     <div class="sidebar__container">
       <div class="sidebar__left">
         <ul>
-          <a href="#home">
-            <li class="sidebar__left_link sidebar__left_link_1">Accueil</li>
-          </a>
-          <a href="">
-            <li class="sidebar__left_link sidebar__left_link_2">Canette</li>
-          </a>
-          <a href="">
-            <li class="sidebar__left_link sidebar__left_link_3">Parfum</li>
-          </a>
+          <li class="sidebar__left_link sidebar__left_link_1"><a href="#home">Accueil</a></li>
+          <li class="sidebar__left_link sidebar__left_link_2"><a href="">Canette</a></li>
+          <li class="sidebar__left_link sidebar__left_link_3"><a href="">Parfum</a></li>
         </ul>
         <div class="sidebar__left__form">
-          <label for="">Tenez-vous au courant</label>
+          <label>Tenez-vous au courant</label>
           <input type="text" class="form__input" placeholder="Saisissez votre adresse mail">
         </div>
       </div>
@@ -78,10 +71,9 @@
                 d="m256.449219 124.5c-72.597657 0-131.5 58.898438-131.5 131.5s58.902343 131.5 131.5 131.5c72.601562 0 131.5-58.898438 131.5-131.5s-58.898438-131.5-131.5-131.5zm0 216.800781c-47.097657 0-85.300781-38.199219-85.300781-85.300781s38.203124-85.300781 85.300781-85.300781c47.101562 0 85.300781 38.199219 85.300781 85.300781s-38.199219 85.300781-85.300781 85.300781zm0 0" />
               <path
                 d="m423.851562 119.300781c0 16.953125-13.746093 30.699219-30.703124 30.699219-16.953126 0-30.699219-13.746094-30.699219-30.699219 0-16.957031 13.746093-30.699219 30.699219-30.699219 16.957031 0 30.703124 13.742188 30.703124 30.699219zm0 0" />
-              </svg>
+            </svg>
           </div>
           <div class="sidebar__right__social__block">
-            <?xml version="1.0" encoding="iso-8859-1"?>
             <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
               <g>
                 <g>
@@ -145,13 +137,23 @@
   </svg>
   <div id="particles-js">
     <div class="fixedElements">
-      <div class="sound" data-text="loaderloader">
+      <div class="sound" data-text="loaderloader"></div>
+      <embed src="sounds/sodaOpening.mp3" autostart="true" loop="true">
+      <div class="switch-btn">
+        <div class="switch-btn__Container">
+          <svg class="switch-btn__Container__left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.308 38.616">
+            <path id="Tracé_2" data-name="Tracé 2" d="M0,30.131,15.065,15.066,0,0" transform="translate(18.065 34.374) rotate(180)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="6" />
+          </svg>
+          <svg class="switch-btn__Container__right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.308 38.616">
+            <path id="Tracé_1" data-name="Tracé 1" d="M1742.947,3729.242l15.065-15.065-15.065-15.065" transform="translate(-1738.704 -3694.869)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="6" />
+          </svg>
+        </div>
       </div>
     </div>
     <div class="container">
       <div class="can-wrapper">
-        <a class="can" href="" title="Image de canette">
-          <img class="vertical" src="img/canContainer.png" alt="Vertical can" aria-hidden="true" nopin="nopin">
+        <a class="can" title="Image de canette">
+          <img class="vertical" src="img/canContainer.png" alt="Canette">
           <span class="label-wrapper">
             <span class="vertical" style="background-image: url(&quot;img/blackCan.png&quot;);"></span>
           </span>
@@ -161,68 +163,56 @@
         <div class="headerContainer">
           <div class="headerLeft">
             <h2>Helix</h2>
-            <embed src="sounds/sodaOpening.mp3" autostart="true" loop="true" hidden="true"></embed>
           </div>
           <div class="headerRight">
             <div class="burgerContainer">
               <div class="burgerLine burgerLine1"></div>
               <div class="burgerLine burgerLine2"></div>
             </div>
-            <a href="">
+            <a>
               <p>fr - en</p>
             </a>
           </div>
         </div>
       </header>
-      <div id="home" class="home">
+      <section id="home">
         <h1>Nouvelle boisson saine, pour vous,<br> pour votre santé.</h1>
-      </div>
+      </section>
       <main>
-        <section class="desc">
-          <article class="infosBlock infosBlockLeft" data-aos="fade-in" data-aos-delay="100" data-aos-duration="1000">
-            <h2>Qu'est-ce que Helix ?</h2>
+        <section data-aos="fade-up" id="desc">
+          <h2>Pourquoi choisir Helix ?</h2>
+          <article class="infosBlock infosBlockLeft" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+            <h3>Qu'est-ce que Helix ?</h3>
             <div class="infosSepa"></div>
             <p>Helix est une start-up dans la création de boisson énergisante, elle a été créée principalement pour montrer que l’on peut créer des boissons énergisantes sans sucre et seulement à base de plantes.</p>
           </article>
-          <article class="infosBlock infosBlockRight" data-aos="fade-in" data-aos-delay="100" data-aos-duration="1000">
-            <h2>À qui est-elle destinée ?</h2>
+          <article class="infosBlock infosBlockRight" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+            <h3>À qui est-elle destinée ?</h3>
             <div class="infosSepa"></div>
             <p>Les boissons Helix son principal conseiller pour les sportifs car elle permette de ce revitaliser et de facilité la récupération physique mais néanmoins la boisson reste consommable pour toute personne éventuelles car elle ne
               représente aucun dans pour notre corps.</p>
           </article>
-          <article class="infosBlock infosBlockLeft" data-aos="fade-in" data-aos-delay="100" data-aos-duration="1000">
-            <h2>Composition</h2>
+          <article class="infosBlock infosBlockLeft" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+            <h3>Composition</h3>
             <div class="infosSepa"></div>
             <p>La boisson est composé à 100% de produits naturels vegetal comme de la Guarana, de la L-carnitine et du Ginseng donc elle possède le label Vegan, elle ne comporte aucune forme de sucre.</p>
           </article>
-          <article class="infosBlock infosBlockRight" data-aos="fade-in" data-aos-delay="100" data-aos-duration="1000">
-            <h2>Notre éthique</h2>
+          <article class="infosBlock infosBlockRight" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+            <h3>Notre éthique</h3>
             <div class="infosSepa"></div>
             <p>Helix est une marque française qui a pour étique de fabriquer tous c’est produit en France pour être certifié label Origine France Garantie </p>
           </article>
           <div class="clear"></div>
         </section>
         <section class="compo">
-          <h2 class="compoTop">Et enfin voici la cerise,</h2>
-          <h2 class="compoBot">sur le gâteau.</h2>
+          <h2 data-aos="fade-up"class="compoTop">Et enfin voici la cerise,</h2>
+          <h2 data-aos="fade-up"class="compoBot">sur le gâteau.</h2>
         </section>
         <section class="switch">
-          <h2>Voici notre parfum Thé Noir</h2>
-          <p>Le parfum thé noir tralala ça sent le thé quoi mais après j'adore le théo hein ! </p>
+          <h2 data-aos="fade-up">Voici notre parfum Thé Noir</h2>
+          <p data-aos="fade-up">Le parfum thé noir tralala ça sent le thé quoi mais après j'adore le théo hein ! </p>
         </section>
-
       </main>
-
-    </div>
-    <div class="switch-btn">
-      <div class="switch-btn__Container">
-        <svg class="switch-btn__Container__left" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 22.308 38.616">
-          <path id="Tracé_2" data-name="Tracé 2" d="M0,30.131,15.065,15.066,0,0" transform="translate(18.065 34.374) rotate(180)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="6" />
-        </svg>
-        <svg class="switch-btn__Container__right" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 22.308 38.616">
-          <path id="Tracé_1" data-name="Tracé 1" d="M1742.947,3729.242l15.065-15.065-15.065-15.065" transform="translate(-1738.704 -3694.869)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="6" />
-        </svg>
-      </div>
     </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
