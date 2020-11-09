@@ -137,11 +137,11 @@ $(document).ready(function() {
   );
 
 /* Gestion du curseur */
-$("a,#wrapper, .burgerContainer, .headerRight p, .switch-btn__Container svg, .sidebar__right__social, .sound").on("mouseenter", function() {
+$("a,#wrapper, .burgerContainer, .headerRight p, .switch-btn__Container svg, .sidebar__right__social, .soundBtn").on("mouseenter", function() {
   $('.pointer1').addClass("active");
   $('.pointer2').addClass("active");
 });
-$("a,#wrapper, .burgerContainer, .headerRight p, .switch-btn__Container svg, .sidebar__right__social, .sound").on("mouseleave", function() {
+$("a,#wrapper, .burgerContainer, .headerRight p, .switch-btn__Container svg, .sidebar__right__social, .soundBtn").on("mouseleave", function() {
   $('.pointer1').removeClass("active");
   $('.pointer2').removeClass("active");
 });
@@ -163,9 +163,11 @@ function togglePlay() {
 
 myAudio.onplaying = function() {
   isPlaying = true;
+  $('.wrapperPath path').css('stroke', 'rgba(255, 255, 255, 0.8')
 };
 myAudio.onpause = function() {
   isPlaying = false;
+  $('.wrapperPath path').css('stroke', 'rgba(255, 255, 255, 0.2)')
 };
 
 audioBtn.onclick = function(){
