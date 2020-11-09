@@ -2,32 +2,35 @@ html {
   font-family: sofia-pro, sans-serif;
   color: white;
   cursor: none;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
   padding: 0;
   position: relative;
-  background-color:rgba(0, 0, 0, 0.95);
+  background-color: rgba(0, 0, 0, 0.95);
   transition: background-color 0.5s ease;
+  width: 100%;
 }
 
 h1 {
   color: white;
   font-family: 'Lora', serif;
   font-weight: 400;
-  font-size: 50px;
+  font-size: 4em;
   z-index: 1;
 }
 
 h2 {
-    display: block;
-    font-size: 1.5em;
-    margin-block-start: 0em;
-    margin-block-end: 0em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
+  display: block;
+  font-size: 1.5em;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
 }
 
 a {
@@ -36,14 +39,16 @@ a {
 }
 
 ul {
-    display: block;
-    list-style-type: disc;
-    margin-block-start: 0em;
-    margin-block-end: 0em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 0px;
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 0px;
 }
+
+.particles-js-canvas-el {}
 
 li {
   list-style: none;
@@ -54,7 +59,6 @@ li {
 }
 
 /* Sidebar */
-
 .sidebar {
   position: fixed;
   overflow: hidden;
@@ -71,10 +75,11 @@ li {
   overflow: hidden;
   height: 100%;
   width: 100%;
-  background-color: gray;
+  background-color: white;
   z-index: 999;
   transform: translateX(0%);
   transition: transform 0.8s ease;
+  opacity: 0.8;
 }
 
 .sidebar__low {
@@ -82,10 +87,11 @@ li {
   overflow: hidden;
   height: 100%;
   width: 100%;
-  background-color: lightgray;
+  background-color: white;
   z-index: 998;
   transform: translateX(0%);
   transition: transform 0.4s ease;
+  opacity: 0.6;
 }
 
 .sidebar__container {
@@ -94,14 +100,14 @@ li {
   margin: auto;
   display: flex;
   justify-content: space-around;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .sidebar__close {
   position: absolute;
-  left: 80%;
+  right: 10%;
   top: 0;
-  margin: 50px;
+  margin-top: 50px;
 }
 
 .--close {
@@ -110,10 +116,6 @@ li {
 
 .--open {
   transform: translateX(0%);
-}
-
-.sidebar__left, .sidebar__right {
-  margin-bottom: 100px;
 }
 
 .sidebar__left li {
@@ -144,6 +146,7 @@ li {
 .sidebar__left_link_2::before {
   content: '02';
 }
+
 .sidebar__left_link_3::before {
   content: '03';
 }
@@ -155,9 +158,13 @@ li {
 }
 
 .sidebar__left__form label {
-  opacity: 0.2;
-  font-size: 18px;
+  opacity: 0.5;
+  font-size: 12px;
+  font-weight: 600;
   margin-bottom: 10px;
+  cursor: none;
+  text-transform: uppercase;
+  margin-bottom: 12px;
 }
 
 .sidebar__left__form input {
@@ -167,8 +174,13 @@ li {
   background-color: rgba(255, 255, 255, 0.1);
   border: none;
   font-family: sofia-pro, sans-serif;
-  padding-left: 30px;
+  padding-left: 20px;
   font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: none;
+}
+
+.sidebar__left__form input::placeholder {
   color: white;
 }
 
@@ -182,7 +194,7 @@ li {
   transform: rotate(90deg);
   font-size: 120px;
   text-transform: uppercase;
-  margin-bottom: 30px;
+  margin-bottom: 80px;
 }
 
 .sidebar__right__social {
@@ -208,7 +220,6 @@ li {
 }
 
 .home {
-  width: 80%;
   height: 100vh;
   display: flex;
   justify-content: flex-start;
@@ -219,7 +230,7 @@ li {
 
 #particles-js {
   position: absolute;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   top: 0;
   left: 0;
@@ -230,6 +241,43 @@ li {
   width: 80%;
   margin: 0 auto;
   z-index: 10;
+}
+
+/* Fixed Elements */
+.sound {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  margin: 3%;
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  overflow: hidden;
+  transform: scale(0.6);
+  z-index: 50;
+}
+
+.sound:before {
+  content: attr(data-text);
+  position: relative;
+  font-size: 4em;
+  top: -42px;
+  width: calc(100%+27px);
+  color: transparent;
+  text-decoration-style: wavy;
+  text-decoration-color: white;
+  text-decoration-line: underline;
+  animation: wave 1s linear infinite;
+
+}
+
+@keyframes wave {
+  0% {
+    left: -3px;
+  }
+  100% {
+    left: -30px;
+  }
 }
 
 .can-wrapper {
@@ -282,11 +330,13 @@ li {
   width: 500vw;
   height: 100%;
   animation: translate 30s linear infinite;
+  transition: all 0.3s ease;
 }
 
 header {
   margin-top: 50px;
   z-index: 10;
+  position: relative;
 }
 
 .headerContainer {
@@ -306,6 +356,7 @@ header {
 .headerRight {
   display: flex;
   flex-direction: column;
+  margin-top: 25px;
 }
 
 .burgerContainer {
@@ -351,13 +402,11 @@ header {
   transition: opacity 0.3s;
 }
 
-.headerRight p:hover {
-  opacity: 0.4;
-}
-
 .particles-js-canvas-el {
   position: fixed;
   height: 100%;
+  width: 100%;
+  max-width: 100%;
   top: 0;
   z-index: 9;
 }
@@ -386,6 +435,7 @@ main {
 .infosSepa {
   height: 2px;
   background-color: white;
+  margin: 20px 0px;
 }
 
 .infosBlock p {
@@ -394,12 +444,12 @@ main {
 }
 
 .compo {
-  margin-top: 500px;
+  margin-top: 550px;
   position: relative;
 }
 
 .compo h2 {
-  font-size: 50px;
+  font-size: 80px;
   font-family: 'Lora', serif;
   text-align: center;
   font-weight: 400;
@@ -430,19 +480,26 @@ main {
 .switch p {
   text-align: center;
   opacity: 0.6;
+  margin-bottom: 100px;
+}
+
+.switch-btn {
+  position: fixed;
+  z-index: 99;
+  right: 0;
+  bottom: 0;
+  margin: 3%;
 }
 
 .switch-btn__Container {
-  position: absolute;
-  right: 0;
-  margin-bottom: 50px;
+  display: flex;
 }
 
 .switch-btn__Container svg {
-  padding: 15px;
   height: 25px;
-  opacity: 0.3;
   transition: opacity 0.3s;
+  margin: 0px 10px;
+  padding: 10px 0px;
 }
 
 .switch-btn__Container svg:hover {
@@ -454,34 +511,72 @@ main {
 }
 
 .red {
+  background-color: #87232F;
+}
+
+.red .label-wrapper span {
+  background-image: url("img/redCan.png");
+  transition: all 0.3s ease;
+}
+
+.red .sidebar {
   background-color: #982033;
 }
 
 .yellow {
-    background-color: yellow;
-    color: black;
+  background-color: #FEEE85;
+  color: black;
 }
 
-.yellow h1{
-    color: black;
-}
-
-.yellow  .headerLeft h2 {
+.yellow li {
   -webkit-text-stroke: 2px black;
 }
 
-.yellow  .burgerLine {
+.yellow li:hover {
+  color: black;
+  -webkit-text-stroke: 2px black;
+}
+
+.yellow .burgerLine:hover {
   background-color: black;
 }
 
+.yellow svg {
+  fill: black;
+}
+
+.yellow input::placeholder, .yellow input {
+  color: black;
+}
+
+.yellow .sidebar {
+  background-color: #FEEE85;
+}
+
+.yellow h1 {
+  color: black;
+}
+
+.yellow .headerLeft h2 {
+  -webkit-text-stroke: 2px black;
+}
+
+.yellow .burgerLine {
+  background-color: black;
+}
+
+.vanilla {
+  background-color: #F3E5AB;
+}
 
 .pointer {
+  mix-blend-mode: difference;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 10px;
-  height: 10px;
+  width: 20px;
+  height: 20px;
   background-color: white;
   border: 1px solid white;
   border-radius: 50%;
@@ -520,4 +615,99 @@ main {
   transform: scale(2);
   border: none;
   visibility: visible;
+}
+
+
+@media screen and (max-width: 640px) {
+  h1 {
+    font-size: 2.5em;
+    text-align: center;
+  }
+
+  .desc h2 {
+    font-size: 1.5em;
+  }
+
+  .desc p {
+      font-size: 1em;
+  }
+
+  .infosBlock {
+    width: 80%;
+    margin: 150px auto;
+  }
+
+  .infosBlockLeft {
+    clear: none;
+  }
+
+  .infosBlockRight {
+    float: none;
+    text-align: right;
+  }
+
+  .compoBot {
+    z-index: 2;
+    position: relative;
+  }
+
+  .container {
+  width: 70%;
+  }
+
+  .switch p {
+    margin-top: 80px;
+  }
+
+  .switch-btn__Container svg {
+    height: 15px;
+    transition: opacity 0.3s;
+    margin: 0px 10px;
+    padding: 10px 0px;
+  }
+
+  .headerRight p {
+    display: none;
+}
+}
+
+@media screen and (max-width: 1000px) {
+
+  html {
+    cursor: default;
+  }
+ .compo h2 {
+   font-size: 50px;
+ }
+
+ .sidebar__container {
+    justify-content: space-around;
+    flex-direction: column;
+ }
+
+ .sidebar__close {
+  z-index: 99;
+ }
+
+ .sidebar__right h2 {
+  display: none;
+ }
+
+ .sidebar__right__social {
+    margin-top: 20px;
+  }
+
+  .sidebar__left {
+     width: 90%;
+     margin-top: 100px;
+   }
+
+   .sidebar__left li {
+     font-size: 52px;
+   }
+
+   .sidebar__left__form input {
+    width: 100%;
+    padding-left: 20px;
+  }
 }
