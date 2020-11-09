@@ -21,6 +21,7 @@ h1 {
   font-weight: 400;
   font-size: 4em;
   z-index: 1;
+  transition: color 0.3s ease;
 }
 
 h2 {

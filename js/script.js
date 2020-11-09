@@ -43,42 +43,29 @@ $(document).ready(function() {
 var compteurCouleur = 0;
 var maxCouleur = 3;
 
-function ColorChecker () {
-  if(compteurCouleur == 0 ) {
+function ColorChecker() {
+  if (compteurCouleur == 0) {
     $('body').removeClass().addClass('black');
-    $('.label-wrapper span').css('background-image','url("img/blackCan.png")')
-  }
-
-  else if(compteurCouleur == 1 ) {
+    $('.label-wrapper span').css('background-image', 'url("img/blackCan.png")')
+  } else if (compteurCouleur == 1) {
     $('body').removeClass().addClass('red');
-    $('.label-wrapper span').css('background-image','url("img/redCan.png")')
-  }
-
-  else if(compteurCouleur == 2 ) {
+    $('.label-wrapper span').css('background-image', 'url("img/redCan.png")')
+  } else if (compteurCouleur == 2) {
     $('body').removeClass().addClass('yellow');
-    $('.label-wrapper span').css('background-image','url("img/yellowCan.png")')
-  }
-  else if(compteurCouleur == 3 ) {
+    $('.label-wrapper span').css('background-image', 'url("img/yellowCan.png")')
+  } else if (compteurCouleur == 3) {
     $('body').removeClass().addClass('vanilla');
-    $('.label-wrapper span').css('background-image','url("img/yellowCan.png")')
+    $('.label-wrapper span').css('background-image', 'url("img/vanillaCan.png")')
   }
-
+  console.log(compteurCouleur);
 }
 
-$(".switch-btn__Container__right").click(function(){
-  if (compteurCouleur < maxCouleur) {
-    compteurCouleur = compteurCouleur + 1;
-  } else {
-    compteurCouleur = 0;
-  }
+$(".switch-btn__Container__right").click(function() {
+  compteurCouleur = compteurCouleur < maxCouleur ? ++compteurCouleur : 0;
   ColorChecker();
 });
 
-$(".switch-btn__Container__left").click(function(){
-  if (compteurCouleur > 0) {
-    compteurCouleur = compteurCouleur - 1;
-  } else {
-    compteurCouleur = maxCouleur;
-  }
+$(".switch-btn__Container__left").click(function() {
+  compteurCouleur = compteurCouleur > 0 ? --compteurCouleur : maxCouleur;
   ColorChecker();
 });
