@@ -499,7 +499,7 @@ main {
 .switch-btn__Container svg {
   height: 25px;
   transition: opacity 0.3s;
-  margin: 0px 10px;
+  margin: 0px 12px;
   padding: 10px 0px;
 }
 
