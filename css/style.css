@@ -58,6 +58,7 @@ li {
   width: 80%;
   margin: 0 auto;
   z-index: 10;
+  background: none;
 }
 
 .clear {
@@ -167,6 +168,11 @@ li {
   margin-top: 100px;
 }
 
+.sidebar__left__form form {
+  display: flex;
+  flex-direction: column;
+}
+
 .sidebar__left__form label {
   opacity: 0.5;
   font-size: 12px;
@@ -256,48 +262,6 @@ li {
   position: absolute;
 }
 
-.playPause {
-  height: 50px;
-  width: 50px;
-}
-
-.sound {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  margin: 3%;
-  width: 50px;
-  height: 50px;
-  background: transparent;
-  overflow: hidden;
-  transform: scale(0.6);
-  z-index: 50;
-}
-
-.sound:before {
-  content: attr(data-text);
-  position: relative;
-  font-size: 4em;
-  top: -42px;
-  width: calc(100%+27px);
-  color: transparent;
-  text-decoration-style: wavy;
-  text-decoration-color: white;
-  text-decoration-line: underline;
-}
-
-.holder {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 200px;
-  height: 50px;
-}
-
-.clip {
-  /* Clip edges, as some of the lines don't terminate nicely. */
-  overflow: hidden;
-}
 
 .soundBtn {
     z-index: 99;
@@ -321,7 +285,7 @@ li {
 
 .wrapperPath path {
   fill:none;
-  stroke: rgba(255, 255, 255, 0.2);
+  stroke: rgba(255, 255, 255, 0.5);
   stroke-width: 2px;
   animation: soundWave 2s linear infinite;
   transition: all 0.8s ease;
@@ -565,6 +529,10 @@ main {
   padding: 10px 0px;
 }
 
+.switch-btn__Container path {
+  opacity: 0.5;
+}
+
 .switch-btn__Container svg:hover {
   opacity: 0.7;
 }
@@ -587,12 +555,21 @@ main {
 }
 
 .yellow {
-  background-color: #FEEE85;
+  background-color: rgb(231,204,0);
+  background-color: linear-gradient(90deg, rgba(231,204,0,1) 0%, rgba(254,243,1,1) 100%);
   color: black;
 }
 
-.yellow li {
+.yellow li, .yellow .sidebar a, .vanilla .sidebar a {
   -webkit-text-stroke: 2px black;
+}
+
+.yellow path, .vanilla path {
+  stroke: black;
+}
+
+.yellow .infosSepa, .vanilla .infosSepa {
+  background-color: black;
 }
 
 .yellow li:hover {
@@ -600,37 +577,62 @@ main {
   -webkit-text-stroke: 2px black;
 }
 
-.yellow .burgerLine:hover {
+.yellow .burgerLine:hover, .vanilla .burgerLine:hover{
   background-color: black;
 }
 
-.yellow svg {
+.yellow svg, .vanilla svg {
   fill: black;
 }
 
-.yellow input::placeholder, .yellow input {
+.yellow input::placeholder, .yellow input, .yellow p, .yellow .sidebar p, .vanilla p {
   color: black;
+  -webkit-text-stroke: 0px black;
+  opacity: 1;
 }
 
 .yellow .sidebar {
-  background-color: #FEEE85;
+  background-color: rgb(231,204,0);
+  background-color: linear-gradient(90deg, rgba(231,204,0,1) 0%, rgba(254,243,1,1) 100%);
 }
 
-.yellow h1 {
+.yellow .burgerContainer:hover .burgerLine1, .vanilla .burgerContainer:hover .burgerLine1 {
+  transform: rotate(45deg);
+  background-color: black;
+}
+
+.yellow .burgerContainer:hover .burgerLine2, .vanilla .burgerContainer:hover .burgerLine2 {
+  transform: rotate(-45deg);
+  top: 18px;
+  background-color: black;
+}
+
+.yellow h1, .vanilla h1 {
   color: black;
 }
 
-.yellow .headerLeft h2 {
+.yellow .headerLeft h2, .vanilla .headerLeft h2 {
   -webkit-text-stroke: 2px black;
 }
 
-.yellow .burgerLine {
+.yellow .burgerLine, .vanilla .burgerLine {
   background-color: black;
 }
 
 .vanilla {
   background-color: #F3E5AB;
+  color: black;
 }
+
+.vanilla .sidebar {
+  background-color: #F3E5AB;
+}
+
+.vanilla input::placeholder, .vanilla input {
+  color: black;
+}
+
+
 
 .pointer {
   mix-blend-mode: difference;
