@@ -137,11 +137,11 @@ $(document).ready(function() {
   );
 
 /* Gestion du curseur */
-$("a,#wrapper, .burgerContainer, .headerRight p, .switch-btn__Container svg, .sidebar__right__social, .soundBtn").on("mouseenter", function() {
+$("a,#wrapper, .burgerContainer, .headerRight p, .switch-btn__Container svg, .sidebar__right__social, .soundBtn, .footer__social__block, .footer__text").on("mouseenter", function() {
   $('.pointer1').addClass("active");
   $('.pointer2').addClass("active");
 });
-$("a,#wrapper, .burgerContainer, .headerRight p, .switch-btn__Container svg, .sidebar__right__social, .soundBtn").on("mouseleave", function() {
+$("a,#wrapper, .burgerContainer, .headerRight p, .switch-btn__Container svg, .sidebar__right__social, .soundBtn, .footer__social__block, .footer__text").on("mouseleave", function() {
   $('.pointer1').removeClass("active");
   $('.pointer2').removeClass("active");
 });
@@ -154,7 +154,7 @@ $(".burgerContainer").click(function() {
 /* ON/OFF de la musique de fond */
 var audioBtn = document.getElementById("audioBtn");
 var myAudio = document.getElementById("myAudio");
-myAudio.volume = 0.5;
+myAudio.volume = 0.3;
 var isPlaying = false;
 
 function togglePlay() {
@@ -192,8 +192,6 @@ function ColorChecker() {
   }
 }
 
-
-  /* Click ternaire */
   $(".switch-btn__Container__right").click(function() {
     compteurCouleur = compteurCouleur < maxCouleur ? ++compteurCouleur : 0;
     ColorChecker();
