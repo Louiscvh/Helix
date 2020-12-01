@@ -1,6 +1,5 @@
 $(document).ready(function() {
 
-
   /* Liaison du curseur */
   $(document).mousemove(function(e) {
     $('.pointer').css({
@@ -23,8 +22,7 @@ $(document).ready(function() {
   })
 
   /* JSON configuration de Particles.js */
-  particlesJS('particles-js',
-  {
+  particlesJS('particles-js', {
     "particles": {
       "number": {
         "value": 80,
@@ -133,64 +131,71 @@ $(document).ready(function() {
       }
     },
     "retina_detect": true
+  });
+
+  /* Gestion du curseur */
+  $("a,#wrapper, .burger__container, .headerRight p, .switch-btn__Container svg, .sidebar__right__social, .soundBtn, .footer__social__block, .footer__text").on("mouseenter", function() {
+    $('.pointer1').addClass("active");
+    $('.pointer2').addClass("active");
+  });
+  $("a,#wrapper, .burger__container, .headerRight p, .switch-btn__Container svg, .sidebar__right__social, .soundBtn, .footer__social__block, .footer__text").on("mouseleave", function() {
+    $('.pointer1').removeClass("active");
+    $('.pointer2').removeClass("active");
+  });
+
+  /* Apparition de la sidebar */
+  $(".burger__container").click(function() {
+    $(".sidebar, .sidebar__mid, .sidebar__low").toggleClass("--open");
+  });
+
+  /* ON/OFF de la musique de fond */
+  var audioBtn = document.getElementById("audioBtn");
+  var myAudio = document.getElementById("myAudio");
+  myAudio.volume = 0.3;
+  var isPlaying = false;
+
+  function togglePlay() {
+    isPlaying ? myAudio.pause() : myAudio.play();
+  };
+
+  myAudio.onplaying = function() {
+    isPlaying = true;
+  };
+  myAudio.onpause = function() {
+    isPlaying = false;
+  };
+
+  audioBtn.onclick = function() {
+    togglePlay();
+  };
+
+  /* Changement de parfum */
+  var compteurCouleur = 0;
+  var maxCouleur = 3;
+
+  function ColorChecker() {
+    if (compteurCouleur == 0) {
+      $('body').removeClass().addClass('black');
+      $('.label-wrapper span').css('background-image', 'url("img/blackCan.png")')
+      $(".switch h2").html("<h2>Voici notre parfum Thé Noir</h2>");
+      $(".switch p").html("<p>Le parfum Thé Noir est basé sur le goût du Thé Noir chinois l'Oolong, pour une expérience unique !</p>");
+    } else if (compteurCouleur == 1) {
+      $('body').removeClass().addClass('red');
+      $('.label-wrapper span').css('background-image', 'url("img/redCan.png")');
+      $(".switch h2").html("<h2>Voici notre parfum Cerise</h2>");
+      $(".switch p").html("<p>Le parfum Cerise est basé sur le goût de la Cerise française Burlat pour la meilleure expérience de goût !</p>");
+    } else if (compteurCouleur == 2) {
+      $('body').removeClass().addClass('yellow');
+      $('.label-wrapper span').css('background-image', 'url("img/yellowCan.png")');
+      $(".switch h2").html("<h2>Voici notre parfum Citron</h2>");
+      $(".switch p").html("<p>Le parfum Citron est basé sur le goût du Citron de Menton pour la meilleure sensation possible !</p>");
+    } else if (compteurCouleur == 3) {
+      $('body').removeClass().addClass('vanilla');
+      $('.label-wrapper span').css('background-image', 'url("img/vanillaCan.png")');
+      $(".switch h2").html("<h2>Voici notre parfum Vanille</h2>");
+      $(".switch p").html("<p>Le parfum Vanille est basé sur le goût de la Vanille de Papouasie, pour un goût le plus savoureux !</p>");
+    }
   }
-  );
-
-/* Gestion du curseur */
-$("a,#wrapper, .burgerContainer, .headerRight p, .switch-btn__Container svg, .sidebar__right__social, .soundBtn, .footer__social__block, .footer__text").on("mouseenter", function() {
-  $('.pointer1').addClass("active");
-  $('.pointer2').addClass("active");
-});
-$("a,#wrapper, .burgerContainer, .headerRight p, .switch-btn__Container svg, .sidebar__right__social, .soundBtn, .footer__social__block, .footer__text").on("mouseleave", function() {
-  $('.pointer1').removeClass("active");
-  $('.pointer2').removeClass("active");
-});
-
-/* Apparition de la sidebar */
-$(".burgerContainer").click(function() {
-  $(".sidebar, .sidebar__mid, .sidebar__low").toggleClass("--open");
-});
-
-/* ON/OFF de la musique de fond */
-var audioBtn = document.getElementById("audioBtn");
-var myAudio = document.getElementById("myAudio");
-myAudio.volume = 0.3;
-var isPlaying = false;
-
-function togglePlay() {
-  isPlaying ? myAudio.pause() : myAudio.play();
-};
-
-myAudio.onplaying = function() {
-  isPlaying = true;
-};
-myAudio.onpause = function() {
-  isPlaying = false;
-};
-
-audioBtn.onclick = function(){
-  togglePlay();
-};
-
-/* Changement de parfum */
-var compteurCouleur = 0;
-var maxCouleur = 3;
-
-function ColorChecker() {
-  if (compteurCouleur == 0) {
-    $('body').removeClass().addClass('black');
-    $('.label-wrapper span').css('background-image', 'url("img/blackCan.png")')
-  } else if (compteurCouleur == 1) {
-    $('body').removeClass().addClass('red');
-    $('.label-wrapper span').css('background-image', 'url("img/redCan.png")')
-  } else if (compteurCouleur == 2) {
-    $('body').removeClass().addClass('yellow');
-    $('.label-wrapper span').css('background-image', 'url("img/yellowCan.png")')
-  } else if (compteurCouleur == 3) {
-    $('body').removeClass().addClass('vanilla');
-    $('.label-wrapper span').css('background-image', 'url("img/vanillaCan.png")')
-  }
-}
 
   $(".switch-btn__Container__right").click(function() {
     compteurCouleur = compteurCouleur < maxCouleur ? ++compteurCouleur : 0;

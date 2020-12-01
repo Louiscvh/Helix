@@ -262,16 +262,15 @@ li {
   position: absolute;
 }
 
-
 .soundBtn {
-    z-index: 99;
-    padding: 10px;
-    bottom: 0px;
-    margin: 3%;
-    color: #fff;
-    height: 30px;
-    position: fixed;
-    width: 30px;
+  z-index: 99;
+  padding: 10px;
+  bottom: 0px;
+  margin: 3%;
+  color: #fff;
+  height: 30px;
+  position: fixed;
+  width: 30px;
 }
 
 .soundBtn .wrapperPath {
@@ -280,11 +279,11 @@ li {
 }
 
 .soundBtn .wrapperPath svg {
-    width: 80px;
+  width: 80px;
 }
 
 .wrapperPath path {
-  fill:none;
+  fill: none;
   stroke: rgba(255, 255, 255, 0.5);
   stroke-width: 2px;
   animation: soundWave 2s linear infinite;
@@ -376,13 +375,13 @@ header {
   text-transform: uppercase;
 }
 
-.headerRight {
+.header__right {
   display: flex;
   flex-direction: column;
   margin-top: 25px;
 }
 
-.burgerContainer {
+.burger__container {
   padding: 20px;
   transition: all 0.3s;
   position: relative;
@@ -397,18 +396,18 @@ header {
   top: 5px;
 }
 
-.burgerContainer:hover .burgerLine1 {
+.burger__container:hover .burgerLine1 {
   transform: rotate(45deg);
   background-color: white;
 }
 
-.burgerContainer:hover .burgerLine2 {
+.burger__container:hover .burgerLine2 {
   transform: rotate(-45deg);
   top: 18px;
   background-color: white;
 }
 
-.burgerContainer div {
+.burger__container div {
   width: 40px;
   height: 3px;
   margin-top: 5px;
@@ -416,7 +415,7 @@ header {
   background-color: white;
 }
 
-.headerRight p {
+.header__right p {
   color: white;
   transform: rotate(90deg);
   font-weight: 300;
@@ -506,7 +505,6 @@ main {
 
 .switch p {
   text-align: center;
-  opacity: 0.6;
   margin-bottom: 100px;
 }
 
@@ -555,8 +553,8 @@ main {
 }
 
 .yellow {
-  background-color: rgb(231,204,0);
-  background-color: linear-gradient(90deg, rgba(231,204,0,1) 0%, rgba(254,243,1,1) 100%);
+  background-color: rgb(231, 204, 0);
+  background-color: linear-gradient(90deg, rgba(231, 204, 0, 1) 0%, rgba(254, 243, 1, 1) 100%);
   color: black;
 }
 
@@ -568,6 +566,10 @@ main {
   stroke: black;
 }
 
+.yellow .footer {
+stroke: white;
+}
+
 .yellow .infosSepa, .vanilla .infosSepa {
   background-color: black;
 }
@@ -577,7 +579,7 @@ main {
   -webkit-text-stroke: 2px black;
 }
 
-.yellow .burgerLine:hover, .vanilla .burgerLine:hover{
+.yellow .burgerLine:hover, .vanilla .burgerLine:hover {
   background-color: black;
 }
 
@@ -592,16 +594,16 @@ main {
 }
 
 .yellow .sidebar {
-  background-color: rgb(231,204,0);
-  background-color: linear-gradient(90deg, rgba(231,204,0,1) 0%, rgba(254,243,1,1) 100%);
+  background-color: rgb(231, 204, 0);
+  background-color: linear-gradient(90deg, rgba(231, 204, 0, 1) 0%, rgba(254, 243, 1, 1) 100%);
 }
 
-.yellow .burgerContainer:hover .burgerLine1, .vanilla .burgerContainer:hover .burgerLine1 {
+.yellow .burger__container:hover .burgerLine1, .vanilla .burger__container:hover .burgerLine1 {
   transform: rotate(45deg);
   background-color: black;
 }
 
-.yellow .burgerContainer:hover .burgerLine2, .vanilla .burgerContainer:hover .burgerLine2 {
+.yellow .burger__container:hover .burgerLine2, .vanilla .burger__container:hover .burgerLine2 {
   transform: rotate(-45deg);
   top: 18px;
   background-color: black;
@@ -631,8 +633,6 @@ main {
 .vanilla input::placeholder, .vanilla input {
   color: black;
 }
-
-
 
 .pointer {
   mix-blend-mode: difference;
@@ -683,7 +683,6 @@ main {
 }
 
 /* Footer */
-
 footer {
   z-index: 1000;
   display: flex;
@@ -715,7 +714,6 @@ footer p {
 
 footer p:hover {
   color: rgba(255, 255, 255, 0.15);
-
 }
 
 .footer__social {
@@ -737,6 +735,10 @@ footer p:hover {
   height: 25px;
   width: 25px;
   fill: white;
+}
+
+.footer__social__block path {
+  stroke: white!important;
 }
 
 @media screen and (max-width: 640px) {
@@ -791,7 +793,7 @@ footer p:hover {
     padding: 10px 0px;
   }
 
-  .headerRight p {
+  .header__right p {
     display: none;
   }
 
@@ -817,8 +819,6 @@ footer p:hover {
     width: 18px;
     fill: white;
   }
-
-
 }
 
 @media screen and (max-width: 1000px) {
@@ -827,8 +827,8 @@ footer p:hover {
   }
 
   footer {
-  margin-left: 25px;
-  margin-right: 25px;
+    margin-left: 25px;
+    margin-right: 25px;
   }
 
   .compo h2 {
