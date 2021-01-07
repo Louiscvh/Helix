@@ -134,11 +134,11 @@ $(document).ready(function() {
   });
 
   /* Gestion du curseur */
-  $("a,#wrapper, .burger__container, .headerRight p, .switch-btn__Container svg, .sidebar__right__social, .soundBtn, .footer__social__block, .footer__text").on("mouseenter", function() {
+  $("a,#wrapper, .burger__container, .headerRight p, .switch-btn__Container svg, .sidebar__right__social, .soundBtn, .footer__social__block, .footer__text, button").on("mouseenter", function() {
     $('.pointer1').addClass("active");
     $('.pointer2').addClass("active");
   });
-  $("a,#wrapper, .burger__container, .headerRight p, .switch-btn__Container svg, .sidebar__right__social, .soundBtn, .footer__social__block, .footer__text").on("mouseleave", function() {
+  $("a,#wrapper, .burger__container, .headerRight p, .switch-btn__Container svg, .sidebar__right__social, .soundBtn, .footer__social__block, .footer__text, button").on("mouseleave", function() {
     $('.pointer1').removeClass("active");
     $('.pointer2').removeClass("active");
   });

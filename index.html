@@ -14,7 +14,6 @@
   <link rel="icon" type="image/png" href="img/favicon.png" />
 
   <!-- CSS -->
-
   <link rel="stylesheet" href="css/style.css">
 
   <!-- FONT -->
@@ -26,6 +25,10 @@
 
   <!-- Animate CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+
 </head>
 
 <!-- Code rédigé selon la méthode BEM (Block, Element, Modifier) -->
@@ -59,7 +62,10 @@
         <div class="sidebar__left__form">
           <form action="index.html" method="post">
             <label>Tenez-vous au courant</label>
-            <input type="email" class="form__input" placeholder="Saisissez votre adresse mail">
+            <div>
+              <input type="email" class="form__input" placeholder="Saisissez votre adresse mail">
+              <button type="submit" name="button"><i class="fas fa-arrow-right"></i></button>
+            </div>
           </form>
         </div>
       </div>
@@ -238,7 +244,7 @@
       <!-- Footer -->
       <footer>
         <div class="footer__text">
-          <h5>Terms of Use - Privacy Policy</h5>
+          <a href="#">Terms of Use</a> - <a href="#">Privacy Policy</a>
           <p>© 2020 Helix</p>
         </div>
         <div class="footer__social">
