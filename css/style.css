@@ -2,7 +2,6 @@ html {
   font-family: sofia-pro, sans-serif;
   color: white;
   cursor: none;
-  width: 100%;
   overflow-x: hidden;
 }
 
@@ -130,7 +129,7 @@ li {
 }
 
 .sidebar__left li a {
-  font-size: 58px;
+  font-size: 6em;
   color: rgba(255, 0, 0, 0);
   background-color: transparent;
   -webkit-text-stroke: 1.4px white;
@@ -145,7 +144,7 @@ li {
 
 .sidebar__left_link a::before {
   color: white;
-  font-size: 14px;
+  font-size: 0.2em;
   left: -15px;
   position: absolute;
 }
@@ -195,7 +194,7 @@ li {
   border: none;
   font-family: sofia-pro, sans-serif;
   padding-left: 20px;
-  font-size: 16px;
+  font-size: 1em;
   color: rgba(255, 255, 255, 0.8);
   cursor: none;
 }
@@ -232,7 +231,7 @@ li {
 
 .sidebar__right h2 {
   transform: rotate(90deg);
-  font-size: 120px;
+  font-size: 10em;
   text-transform: uppercase;
   margin-bottom: 80px;
 }
@@ -310,11 +309,12 @@ li {
   fill: none;
   stroke: rgba(255, 255, 255, 0.5);
   stroke-width: 2px;
-  animation: soundWave 2s linear infinite;
+  animation: AnimSon 2s linear infinite;
   transition: all 0.8s ease;
 }
 
-@-webkit-keyframes soundWave {
+/* Animation son */
+@-webkit-keyframes AnimSon {
   0% {
     -webkit-transform: translateX(0);
     transform: translateX(0)
@@ -326,6 +326,7 @@ li {
   }
 }
 
+/* Canette */
 .can-wrapper {
   position: relative;
 }
@@ -379,6 +380,7 @@ li {
   transition: all 0.3s ease;
 }
 
+/*Header */
 header {
   margin-top: 50px;
   z-index: 10;
@@ -392,7 +394,7 @@ header {
 }
 
 .headerLeft h2 {
-  font-size: 56px;
+  font-size: 3em;
   color: rgba(255, 0, 0, 0);
   background-color: transparent;
   -webkit-text-stroke: 2px white;
@@ -410,6 +412,7 @@ header {
   margin-top: 40px;
 }
 
+/* Menu Burger */
 .burger__container {
   padding: 20px;
   transition: all 0.3s;
@@ -462,14 +465,16 @@ header {
   z-index: 9;
 }
 
+/* Main */
 main {
   position: relative;
 }
 
 #desc h2 {
-  font-size: 60px;
+  font-size: 3.5em;
 }
 
+/* Section infosBlock */
 .infosBlock {
   width: 400px;
 }
@@ -484,7 +489,7 @@ main {
 }
 
 .infosBlock h3 {
-  font-size: 32px;
+  font-size: 2em;
 }
 
 .infosSepa {
@@ -498,13 +503,14 @@ main {
   opacity: 0.5;
 }
 
+/* Section compo */
 .compo {
   margin-top: 550px;
   position: relative;
 }
 
 .compo h2 {
-  font-size: 80px;
+  font-size: 4.5em;
   font-family: 'Lora', serif;
   text-align: center;
   font-weight: 400;
@@ -522,6 +528,7 @@ main {
   position: relative;
 }
 
+/* Section switch */
 .switch {
   margin-top: 550px;
   padding-bottom: 0px;
@@ -564,10 +571,12 @@ main {
   opacity: 0.7;
 }
 
+/* Black */
 .black {
   background-color: black;
 }
 
+/* Red */
 .red {
   background-color: #87232F;
 }
@@ -581,6 +590,7 @@ main {
   background-color: #982033;
 }
 
+/* Yellow */
 .yellow {
   background-color: rgb(231, 204, 0);
   background-color: linear-gradient(90deg, rgba(231, 204, 0, 1) 0%, rgba(254, 243, 1, 1) 100%);
@@ -650,6 +660,7 @@ main {
   background-color: black;
 }
 
+/* Vanilla */
 .vanilla {
   background-color: #F3E5AB;
   color: black;
@@ -663,6 +674,7 @@ main {
   color: black;
 }
 
+/* Pointer */
 .pointer {
   mix-blend-mode: difference;
   position: absolute;
@@ -768,6 +780,7 @@ footer p:hover {
   stroke: white !important;
 }
 
+/* Media Query */
 @media screen and (max-width: 640px) {
   h1 {
     font-size: 2.5em;
@@ -889,7 +902,7 @@ footer p:hover {
   }
 
   .sidebar__left li {
-    font-size: 52px;
+    font-size: 0.5em;
   }
 
   .sidebar__left__form input {
@@ -898,7 +911,7 @@ footer p:hover {
   }
 
   .headerLeft h2 {
-    font-size: 40px;
+    font-size: 2.5em;
   }
 
   .headerRight p {

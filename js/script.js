@@ -12,15 +12,6 @@ $(document).ready(function() {
     });
   })
 
-  $(document).on({
-    mouseenter: function() {
-      $('.text-cursor').css('display', 'none');
-    },
-    mouseleave: function() {
-      $('.text-cursor').css('display', 'block');
-    },
-  })
-
   /* JSON configuration de Particles.js */
   particlesJS('particles-js', {
     "particles": {

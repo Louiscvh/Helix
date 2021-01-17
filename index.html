@@ -10,9 +10,6 @@
   <link rel="canonical" href="www.helix.fr/">
   <title>Helix</title>
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="img/favicon.png" />
-
   <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
 
@@ -29,10 +26,12 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="img/favicon.png" />
+
 </head>
 
 <!-- Code rédigé selon la méthode BEM (Block, Element, Modifier) -->
-
 <body>
 
   <!-- Pointer -->
@@ -132,7 +131,6 @@
               <g>
               </g>
             </svg>
-
           </div>
         </div>
       </div>
@@ -173,8 +171,9 @@
       </div>
     </div>
 
-    <!-- Main -->
+    <!-- Container -->
     <div class="container">
+      <!-- Canette -->
       <div class="can-wrapper">
         <a class="can" title="Image de canette">
           <img src="img/canContainer.png" alt="Canette">
@@ -203,7 +202,6 @@
       <section id="home">
         <h1>Nouvelle boisson saine, pour vous,<br> pour votre santé.</h1>
       </section>
-
       <!-- Main -->
       <main>
         <section data-aos="fade-up" id="desc">
@@ -240,7 +238,6 @@
           <p data-aos="fade-up">Le parfum Thé Noir est basé sur le goût du Thé Noir chinois l'Oolong, pour une expérience unique !</p>
         </section>
       </main>
-
       <!-- Footer -->
       <footer>
         <div class="footer__text">
@@ -322,21 +319,20 @@
   <!-- AOS Transitions -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
-  <!-- Script principale -->
-  <script src="js/script.js"></script>
-
   <!-- Initiation AOS -->
   <script>
     AOS.init();
   </script>
 
+  <!-- Script principale -->
+  <script src="js/script.js"></script>
+  
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ESCSE5DV7H"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-ESCSE5DV7H');
   </script>
 
